@@ -4,18 +4,19 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
-const MONGODB_URI ="mongodb+srv://ram:1234@cluster0.ddeqcar.mongodb.net/test1";
+const MONGODB_URI = process.env.MONGODB_CONNECT_URI;
 const User = require('./models/user');
 const errorController = require('./controllers/error');
 const csrf = require('csurf');
 const flash = require('connect-flash');
 const multer = require('multer');
-
+const dotenv = require( "dotenv" )
+dotenv.config()
 
 const app = express();
 const store = new MongoDBStore({
-    uri: MONGODB_URI,
-    collection: 'sessions'
+  uri: process.env.MONGODB_CONNECT_URI,
+  collection: "sessions",
 });
 
 const csrfProtection = csrf();
@@ -104,15 +105,18 @@ app.use((error,req,res,next)=>{
         path: '/500',
         isAuthenticated: req.session.isLoggedIn
     })
-})
+} )
+
+
 
 mongoose.set('strictQuery', false);
-mongoose.connect(MONGODB_URI)
-    .then(result => {
-                app.listen(3000);
-                console.log("Database Connected...");
-    })
-    .catch(err => {
-        console.log(err)
-    });
+mongoose
+  .connect(process.env.MONGODB_CONNECT_URI)
+  .then((result) => {
+    app.listen(process.env.PORT);
+    console.log("Database Connected...");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
