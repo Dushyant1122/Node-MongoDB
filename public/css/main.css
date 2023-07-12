@@ -34,7 +34,7 @@ form {
 .main-header {
   width: 100%;
   height: 3.5rem;
-  background-color: #00695c;
+  background-color: #468B97;
   padding: 0 1.5rem;
   display: flex;
   align-items: center;
@@ -42,10 +42,8 @@ form {
 
 .main-header__nav {
   height: 100%;
-  width: 100%;
   display: none;
   align-items: center;
-  justify-content: space-between;
 }
 
 .main-header__item-list {
@@ -70,12 +68,13 @@ form {
   cursor: pointer;
 }
 
+
 .main-header__item a:hover,
 .main-header__item a:active,
 .main-header__item a.active,
 .main-header__item button:hover,
 .main-header__item button:active {
-  color: #ffeb3b;
+  color: black;
 }
 
 .mobile-nav {
@@ -114,7 +113,7 @@ form {
   font: inherit;
   text-decoration: none;
   color: black;
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding: 0.5rem 2rem;
   background: transparent;
   border: none;
@@ -126,7 +125,7 @@ form {
 .mobile-nav__item a.active,
 .mobile-nav__item button:hover,
 .mobile-nav__item button:active {
-  background: #00695c;
+  background: #468B97;
   color: white;
   border-radius: 3px;
 }
@@ -147,8 +146,8 @@ form {
 
 #side-menu-toggle:active,
 #side-menu-toggle:hover {
-  color: #ffeb3b;
-  border-color: #ffeb3b;
+  color: black;
+  border-color: black;
 }
 
 .backdrop {
@@ -167,10 +166,12 @@ form {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: stretch;
+
 }
 
 .card {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  margin-bottom: 2rem;
 }
 
 .card__header,
@@ -208,8 +209,8 @@ form {
   padding: 0.25rem 1rem;
   text-decoration: none;
   font: inherit;
-  border: 1px solid #00695c;
-  color: #00695c;
+  border: 1px solid #468B97;
+  color: #468B97;
   background: white;
   border-radius: 3px;
   cursor: pointer;
@@ -217,7 +218,7 @@ form {
 
 .btn:hover,
 .btn:active {
-  background-color: #00695c;
+  background-color: #468B97;
   color: white;
 }
 
@@ -232,39 +233,40 @@ form {
   color: white;
 }
 
-.user-message {
-  margin: auto;
+.user-message{
+  margin: 10px auto;
   width: 90%;
-  border: 1px solid #4771fa;
-  padding: 0.5rem;
+  border: 1px solid #468B97;
+  padding: 1rem;
   border-radius: 3px;
-  background: #b9c9ff;
+  background:  #5a9ca7;
   text-align: center;
 }
 
-.user-message--error {
+.user-message-error{
   border-color: red;
-  background: rgb(255, 176, 176);
+  background: rgb(255,176,176);
   color: red;
 }
 
 .pagination{
-  margin-top: 2rem;
   text-align: center;
+ margin-top: 3rem;
 }
 
 .pagination a{
   text-decoration: none;
-  color: #00695c;
+  color:#468B97;
   padding: 0.5rem;
-  border: 1px solid #00695c;
-  margin: 0 1rem;
+  border: 1px solid #468B97;
+margin: 0 1rem;
+
 }
 
 .pagination a:hover,
 .pagination a:active,
 .pagination a.active{
-  background: #00695c;
+  background:#468B97;
   color: white;
 }
 
@@ -276,7 +278,6 @@ form {
   #side-menu-toggle {
     display: none;
   }
-
   .user-message {
     width: 30rem;
   }
